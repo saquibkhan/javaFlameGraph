@@ -9,7 +9,7 @@
 3. ```npm run start <process id>``` - This will start profiling for the given process id.
     e.g. ```npm run start 1234```
 
-##Credits
+##Acknowledgements
 Thanks to [Brendan Gregg's FlameGraph](https://github.com/brendangregg/FlameGraph)
 
 ## License
