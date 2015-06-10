@@ -1,0 +1,23 @@
+{
+  "name": "JavaFlameGraph",
+  "version": "0.0.1",
+  "description": "FlameGraph for Java",
+  "main": "sh flame-gen.sh",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saquibkhan/javaFlameGraph.git"
+  },
+  "keywords": [
+    "FlameGraph",
+    "Java"
+  ],
+  "author": "Saquib Khan <saquibofficial@gmail.com> (https://github.com/saquibkhan)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saquibkhan/javaFlameGraph/issues"
+  },
+  "homepage": "https://github.com/saquibkhan/javaFlameGraph"
+}
