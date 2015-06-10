@@ -1,8 +1,5 @@
 #!/bin/sh
- 
-TMPDIR=./tmp_flame
-
-mkdir $TMPDIR 2> /dev/null
+echo "wait generating report..."
 
 TMPSTACKS=$TMPDIR/flamegraph-stacks-collapsed.txt
 TMPPALETTE=$TMPDIR/flamegraph-palette.map
@@ -12,9 +9,9 @@ perl ./FlameGraph/stackcollapse-jstack.pl $1 > $TMPSTACKS
 # 1st run - hot: default
 if [ "$2" == "" ]
 then 
-	perl ./FlameGraph/flamegraph.pl --cp $TMPSTACKS > stacks.svg
+	perl ./FlameGraph/flamegraph.pl --cp $TMPSTACKS > stacks.html
 else
-	grep $2 $TMPSTACKS | perl ./FlameGraph/flamegraph.pl --cp > stacks.svg
+	grep $2 $TMPSTACKS | perl ./FlameGraph/flamegraph.pl --cp > stacks.html
 fi
 
  
@@ -24,7 +21,10 @@ cat $TMPPALETTE | grep -v '\.read' | grep -v '\.write' | grep -v 'socketRead' | 
 
 if [ "$2" == "" ]
 then 
-	perl ./FlameGraph/flamegraph.pl --cp --colors=io $TMPSTACKS > flame.svg
+	perl ./FlameGraph/flamegraph.pl --cp --colors=io $TMPSTACKS > flame.html
 else
-	grep $2 $TMPSTACKS | perl ./FlameGraph/flamegraph.pl --cp --colors=io > flame.svg
+	grep $2 $TMPSTACKS | perl ./FlameGraph/flamegraph.pl --cp --colors=io > flame.html
 fi
+
+#echo "done!"
+open ./flame.html
