@@ -25,7 +25,7 @@ then
   echo "waiting for java process..."
   while [ "$pid" == "" ]
   do
-      #For Windows with Cygwin uncomment it
+      #For Windows with Cygwin use this
   	#pid=`ps -W | grep java | grep -o [0-9]* | head -1`
       pid=`ps | grep java | grep -v grep | grep -o [0-9]* | head -1`
   	if [ "$pid" != "" ]
@@ -36,6 +36,8 @@ then
 else
   pid=$1;
 fi
+#For Windows with Cygwin use this
+#processExists=`ps -pW $pid | grep $pid`
 processExists=`ps -p $pid | grep $pid`
 if [ "$processExists" != "" ]
 then

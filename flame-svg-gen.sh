@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "wait generating report..."
-
+TMPDIR=./tmp_flame
 TMPSTACKS=$TMPDIR/flamegraph-stacks-collapsed.txt
 TMPPALETTE=$TMPDIR/flamegraph-palette.map
 
@@ -27,4 +27,6 @@ else
 fi
 
 #echo "done!"
+#For winodws with cygwin use this
+#./flame.html
 open ./flame.html
