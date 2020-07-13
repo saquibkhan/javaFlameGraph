@@ -1,6 +1,6 @@
 {
-  "name": "javaflamegraph",
-  "version": "0.0.1",
+  "name": "@saquibkhan/javaflamegraph",
+  "version": "1.0.0",
   "description": "FlameGraph for Java",
   "main": "",
   "scripts": {
@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/saquibkhan/javaFlameGraph/issues"
   },
-  "homepage": "https://github.com/saquibkhan/javaFlameGraph"
+  "homepage": "https://github.com/saquibkhan/javaFlameGraph",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
